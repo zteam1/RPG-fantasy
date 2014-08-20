@@ -12,3 +12,9 @@ void Player::set_texture(sf::Texture texture, std::string img)
     m_texture = texture;
     m_sprite.setTexture(m_texture);
 }
+
+void Player::draw(sf::RenderTarget& target)
+{
+    target.draw(m_sprite);
+}
+
