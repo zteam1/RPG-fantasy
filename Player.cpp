@@ -6,15 +6,16 @@ void Player::set_texture(sf::Texture texture, std::string img)
 {
     if (!texture.loadFromFile(img))
     {
-        std::cout<<"erreur chargement texture"<<std::endl;
+        std::cout<<"Erreur lors du chargement texture"<<std::endl;
+        //exit(-1); 
     }
 
-    m_texture = texture;
     m_sprite.setTexture(m_texture);
 }
 
-void Player::draw(sf::RenderTarget& target)
+virtual void Player::draw(sf::RenderTarget& target,sf::RenderStates states) const
 {
-    target.draw(m_sprite);
+    states *= getTransform();
+    target.draw(m_sprite,states);
 }
 
