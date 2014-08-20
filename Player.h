@@ -9,9 +9,8 @@ class Player: public Entity
 {
     public:
         void set_texture(sf::Texture texture, std::string img);
-        void draw(sf::RenderTarget& target);
-
     private:
+        virtual void draw(sf::RenderTarget& target,sf::RenderStates states) const;
         sf::Texture m_texture;
         sf::Sprite m_sprite;
 };
