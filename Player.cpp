@@ -13,9 +13,4 @@ void Player::set_texture(sf::Texture texture, std::string img)
     m_sprite.setTexture(m_texture);
 }
 
-void Player::draw(sf::RenderTarget& target,sf::RenderStates states) const
-{
-    states *= getTransform();
-    target.draw(m_sprite,states);
-}
 
