@@ -9,6 +9,7 @@ class Player: public Entity
 {
     public:
         void set_texture(sf::Texture texture, std::string img);
+        void draw(sf::RenderTarget& target);
 
     private:
         sf::Texture m_texture;
@@ -17,3 +18,4 @@ class Player: public Entity
 
 
 #endif // PLAYER_H_INCLUDED
+
