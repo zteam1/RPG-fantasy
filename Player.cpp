@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Player.h"
 
-void Player::set_texture(sf::Texture& texture, std::string img)
+void Player::set_texture(sf::Texture texture, std::string img)
 {
     if (!texture.loadFromFile(img))
     {
