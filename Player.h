@@ -8,7 +8,7 @@
 class Player: public Entity
 {
     public:
-        void set_texture(sf::Texture& texture, std::string img);
+        void set_texture(sf::Texture texture, std::string img);
 
     private:
         sf::Texture m_texture;
