@@ -1,7 +1,30 @@
 Bon vu que j'ai integre ma classe TileMap dans le moteur .Je fais ce ptit readme pour expliquer un peu comment l'utiliser :).
 Tout d'arbord , il faut charger la map (logique !). Pour charger la map , TileMap possede une fonction load(const std:: string& path);
-Elle prend en parametre l'emplacement du fichier map (exemple : map.txt) :) . A noter , que le fichier map peut avoir une
-autre extension que "txt" (exemple : map.lvl).
+Elle prend en parametre l'emplacement du fichier map (exemple : map.txt) :) Exemple d'utilisation : 
+
+Exemple 1:
+
+TileMap maMap;
+maMap.load("map.txt");
+
+Exemple 2:
+
+Tilemap maMap("map.txt"); // possede un constructeur surcharger qui fais appelle a load ;)
+
+A noter , que le fichier map peut avoir une
+autre extension que "txt" (exemple : map.lvl). 
+
+Apres avoir charger la map , il faut l'afficher (logique !). Hors TileMap facilite l'affichage car celle-ci derive de 
+la classe sf::Drawable ! Donc on affiche notre map ainsi :
+
+window.draw(maMap);
+window.display();
+
+SIMPLE NON ?!
+
+TileMap possede aussi quelque getter qui te donne le nombre de tile (retourne un sf::Vector2u) , la taille d'un tile (retourne un sf::Vector2i)
+la taille du map [la taille total hein ;) ] (retourne un sf::Vector2u) , le conteneur [vector] de la map (retourne un Tab2D un type specifique a cette classe)
+et enfin le globalBounds d'un tile a l'index x et y de la map (retourne un sf::FloatRect).
 
 Ne vous casser pas les co**lles avec la structure du fichier map , vous pouvez 
 utiliser l'editeur ,puis faire une map cool et la sauvegarder avec S. L'editeur va generer un fichier "editMap.lvl". PS: 
@@ -15,3 +38,6 @@ tileset.png // la location du tileset
 0,1 0,2 0,3 0,4 0,5
 0,1 0,2 0,3 0,4 0,5
 0,1 0,2 0,3 0,4 0,5
+
+
+J'ESPERE QUE J'AI ETE ASSEZ CLAIR !!! :D Update le post sur OC ET INFORME L'AVANCEMENT DU PROJET !!
