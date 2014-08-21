@@ -8,23 +8,20 @@
  *
  */
 
-#ifndef PLAYER_H_INCLUDED
-#define PLAYER_H_INCLUDED
-
 #include <SFML/Graphics.hpp>
-#include <string>
-#include "Entity.hpp"
+#include <iostream>
+#include "Player.h"
 
-class Player: public Entity
+void Player::set_texture(sf::Texture texture, std::string img)
 {
-    public:
-        void set_texture(sf::Texture texture, std::string img);
-    private:
-        virtual void draw(sf::RenderTarget& target,sf::RenderStates states) const;
-        sf::Texture m_texture;
-        sf::Sprite m_sprite;
-};
+    if (!texture.loadFromFile(img))
+    {
+        std::cout<<"Erreur lors du chargement texture"<<std::endl;
+        //exit(-1);
+    }
 
+    m_texture = texture;
+    m_sprite.setTexture(m_texture);
+}
 
-#endif // PLAYER_H_INCLUDED
 
