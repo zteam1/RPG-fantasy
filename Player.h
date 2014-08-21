@@ -1,6 +1,6 @@
 /**
  *
- * \Nom du fichier : Player.cpp
+ * \Nom du fichier : Player.hpp
  * \fonction : la classe du personnage [comme son nom l'indique]
  * \Auteur : Maxia (de ZTeam)
  * \Project : Fantasy RPG
