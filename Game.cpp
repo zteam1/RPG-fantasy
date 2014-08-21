@@ -1,3 +1,13 @@
+/**
+ *
+ * \Nom du fichier : Game.cpp
+ * \fonction : la classe de base du game engine
+ * \Auteur : Maxia (de ZTeam)
+ * \Project : Fantasy RPG
+ * \Contributeur : Moi[developpeur] ; Maxia[developpeur] ; dalyl-zero[developpeur]
+ *
+ */
+
 #include <SFML/Graphics.hpp>
 
 #include "Game.hpp"
@@ -7,7 +17,9 @@ sf::Time const TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game() : mWindow(sf::VideoMode(800, 600, 32), "RPG Fantasy")
 {
-
+    /** tu dois charger la map ici (pas dans la boucle ;) )
+    j'ai integre ma classe TileMap dans le game engine ! **/
+    mMap.load("Maps/test_2.lvl");
 }
 
 void Game::run()
@@ -57,6 +69,6 @@ void Game::update(sf::Time)
 void Game::render()
 {
     mWindow.clear();
-    mMap.load("Maps/Test_1.txt", mWindow);
+    mWindow.draw(mMap);
     mWindow.display();
 }
