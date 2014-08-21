@@ -1,3 +1,13 @@
+/**
+ *
+ * \Nom du fichier : Game.hpp
+ * \fonction : la classe de base du game engine
+ * \Auteur : Maxia (de ZTeam)
+ * \Project : Fantasy RPG
+ * \Contributeur : Mohackz[developpeur] ; Maxia[developpeur] ; dalyl-zero[developpeur]
+ *
+ */
+
 #ifndef GAME_HPP_INCLUDED
 #define GAME_HPP_INCLUDED
 
@@ -22,7 +32,7 @@ private :
 private :
 
     sf::RenderWindow mWindow;
-    Map mMap;
+    TileMap mMap;
 
 };
 
