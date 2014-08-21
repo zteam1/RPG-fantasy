@@ -4,7 +4,7 @@
  * \fonction : la classe de base du game engine
  * \Auteur : Maxia (de ZTeam)
  * \Project : Fantasy RPG
- * \Contributeur : Moi[developpeur] ; Maxia[developpeur] ; dalyl-zero[developpeur]
+ * \Contributeur : Mohackz[developpeur] ; Maxia[developpeur] ; dalyl-zero[developpeur]
  *
  */
 
