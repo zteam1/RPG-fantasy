@@ -1,9 +1,19 @@
+/**
+ *
+ * \Nom du fichier : Player.cpp
+ * \fonction : la classe du personnage [comme son nom l'indique]
+ * \Auteur : Maxia (de ZTeam)
+ * \Project : Fantasy RPG
+ * \Contributeur : Mohackz[developpeur] ; Maxia[developpeur] ; dalyl-zero[developpeur]
+ *
+ */
+
 #ifndef PLAYER_H_INCLUDED
 #define PLAYER_H_INCLUDED
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include "Entity.h"
+#include "Entity.hpp"
 
 class Player: public Entity
 {
