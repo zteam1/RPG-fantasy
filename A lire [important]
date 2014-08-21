@@ -1,0 +1,17 @@
+Bon vu que j'ai integre ma classe TileMap dans le moteur .Je fais ce ptit readme pour expliquer un peu comment l'utiliser :).
+Tout d'arbord , il faut charger la map (logique !). Pour charger la map , TileMap possede une fonction load(const std:: string& path);
+Elle prend en parametre l'emplacement du fichier map (exemple : map.txt) :) . A noter , que le fichier map peut avoir une
+autre extension que "txt" (exemple : map.lvl).
+
+Ne vous casser pas les co**lles avec la structure du fichier map , vous pouvez 
+utiliser l'editeur ,puis faire une map cool et la sauvegarder avec S. L'editeur va generer un fichier "editMap.lvl". PS: 
+il y a une fonction membre qui peut permettre de changer l'extension des fichier sauvegarder ;) !
+
+Cependant si vous voulez comme meme etudier la structure du fichier map , la voila (Prenez un exemple simple de map.lvl):
+32 32 // la taille d'un tile [height] [width] respectivement
+tileset.png // la location du tileset
+4 5 // les nombres de tile [NombreTileEn_Y] [NombreTileEn_X] respectivement
+/////Et enfin la map 
+0,1 0,2 0,3 0,4 0,5
+0,1 0,2 0,3 0,4 0,5
+0,1 0,2 0,3 0,4 0,5
