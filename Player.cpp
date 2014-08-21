@@ -1,17 +1,30 @@
+/**
+ *
+ * \Nom du fichier : Player.cpp
+ * \fonction : la classe du personnage [comme son nom l'indique]
+ * \Auteur : Maxia (de ZTeam)
+ * \Project : Fantasy RPG
+ * \Contributeur : Mohackz[developpeur] ; Maxia[developpeur] ; dalyl-zero[developpeur]
+ *
+ */
+
+#ifndef PLAYER_H_INCLUDED
+#define PLAYER_H_INCLUDED
+
 #include <SFML/Graphics.hpp>
-#include <iostream>
-#include "Player.h"
+#include <string>
+#include "Entity.hpp"
 
-void Player::set_texture(sf::Texture texture, std::string img)
+class Player: public Entity
 {
-    if (!texture.loadFromFile(img))
-    {
-        std::cout<<"Erreur lors du chargement texture"<<std::endl;
-        //exit(-1); 
-    }
-    
-    m_texture = texture;
-    m_sprite.setTexture(m_texture);
-}
+    public:
+        void set_texture(sf::Texture texture, std::string img);
+    private:
+        virtual void draw(sf::RenderTarget& target,sf::RenderStates states) const;
+        sf::Texture m_texture;
+        sf::Sprite m_sprite;
+};
 
+
+#endif // PLAYER_H_INCLUDED
 
