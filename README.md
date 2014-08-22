@@ -1,4 +1,5 @@
 #RPG-fantasy
 ===========
 
-Fantasy avec un RPG code en c++ avec la SFML. Pour l'instant nous travaillons sur le moteur de jeu :)
+Fantasy est un RPG codé en C++ avec la SFML & Thor. Pour l'instant nous travaillons sur le moteur de jeu :) .
+
