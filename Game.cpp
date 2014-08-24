@@ -12,20 +12,26 @@
 
 #include "Game.hpp"
 #include "Map.hpp"
+#include "Player.h"
+#include "Entity.h"
 
 sf::Time const TimePerFrame = sf::seconds(1.f / 60.f);
+Player yazid;
 
 Game::Game() : mWindow(sf::VideoMode(800, 600, 32), "RPG Fantasy")
 {
-    /** tu dois charger la map ici (pas dans la boucle ;) )
-    j'ai integre ma classe TileMap dans le game engine ! **/
-    mMap.load("Maps/test_2.lvl");
+
 }
 
 void Game::run()
 {
     sf::Clock clock;
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
+
+    //test zone
+    yazid.set_texture("Media/Textures/Player.png");
+    //test zone
+
     while(mWindow.isOpen())
     {
         timeSinceLastUpdate += clock.restart();
@@ -69,6 +75,7 @@ void Game::update(sf::Time)
 void Game::render()
 {
     mWindow.clear();
-    mWindow.draw(mMap);
+    mMap.load("Maps/Test_1.txt", mWindow);
+    mWindow.draw(yazid);
     mWindow.display();
 }
