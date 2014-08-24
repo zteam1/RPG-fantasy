@@ -13,18 +13,24 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include "Entity.hpp"
+#include "Entity.h"
 
 class Player: public Entity
 {
     public:
-        void set_texture(sf::Texture texture, std::string img);
+        Player();
+        void set_texture(std::string img);
+
     private:
-        virtual void draw(sf::RenderTarget& target,sf::RenderStates states) const;
+        virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
         sf::Texture m_texture;
         sf::Sprite m_sprite;
+        int m_vie;
+        int m_mana;
+        std::string m_nom;
 };
 
 
 #endif // PLAYER_H_INCLUDED
+
 
