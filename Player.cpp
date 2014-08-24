@@ -12,16 +12,26 @@
 #include <iostream>
 #include "Player.h"
 
-void Player::set_texture(sf::Texture texture, std::string img)
+void Player::set_texture(std::string img)
 {
-    if (!texture.loadFromFile(img))
+    if (!m_texture.loadFromFile(img))
     {
-        std::cout<<"Erreur lors du chargement texture"<<std::endl;
-        //exit(-1);
+        std::cout<<"erreur chargement texture"<<std::endl;
     }
 
-    m_texture = texture;
     m_sprite.setTexture(m_texture);
 }
 
+void Player::draw(sf::RenderTarget& target, sf::RenderStates states) const
+ {
+     states.transform *= getTransform();
+     target.draw(m_sprite, states);
+ }
+
+ Player::Player()
+ {
+     m_vie = 100;
+     m_mana = 100;
+     m_nom = "";
+ }
 
