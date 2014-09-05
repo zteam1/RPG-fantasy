@@ -7,8 +7,8 @@ class Entity : public sf::Drawable, public sf::Transformable
 {
     public:
         void set_vel(double velociter);
-
         double get_vel();
+        
     private:
         double m_velocite;
 };
