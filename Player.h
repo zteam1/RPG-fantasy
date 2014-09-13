@@ -20,6 +20,8 @@ class Player: public Entity
     public:
         Player();
         void set_texture(std::string img);
+        void deplacement();
+        void scrolling();
 
     private:
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
@@ -28,9 +30,16 @@ class Player: public Entity
         int m_vie;
         int m_mana;
         std::string m_nom;
+        double m_speed;
+        enum Dir{Down, Left, Right, Up};
+        sf::Vector2i m_anim = sf::Vector2i(1, Down);
+        sf::View m_view;
+
+		sf::Vector2f m_movement;
 };
 
 
 #endif // PLAYER_H_INCLUDED
+
 
 
