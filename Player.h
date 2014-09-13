@@ -35,7 +35,7 @@ class Player: public Entity
         sf::Vector2i m_anim = sf::Vector2i(1, Down);
         sf::View m_view;
 
-		sf::Vector2f m_movement;
+	sf::Vector2f m_movement;
 };
 
 
