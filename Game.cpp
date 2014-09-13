@@ -14,13 +14,14 @@
 #include "Map.hpp"
 #include "Player.h"
 #include "Entity.h"
+#include "Fonctions.h"
 
 sf::Time const TimePerFrame = sf::seconds(1.f / 60.f);
 Player yazid;
 
 Game::Game() : mWindow(sf::VideoMode(800, 600, 32), "RPG Fantasy")
 {
-
+    mWindow.setFramerateLimit(60);
 }
 
 void Game::run()
@@ -28,9 +29,7 @@ void Game::run()
     sf::Clock clock;
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
-    //test zone
-    yazid.set_texture("Media/Textures/Player.png");
-    //test zone
+    yazid.set_texture("Media/Textures/player.png");
 
     while(mWindow.isOpen())
     {
@@ -51,6 +50,8 @@ void Game::handlePlayerInput(sf::Keyboard key, bool isPressed)
 {
 }
 
+
+// récuperer les evenements
 void Game::processEvents()
 {
     sf::Event event;
@@ -58,20 +59,24 @@ void Game::processEvents()
     {
         switch(event.type)
         {
-        case sf::Event::Closed :
-            mWindow.close();
-            break;
+            case sf::Event::Closed :
+                mWindow.close();
+                break;
 
-        default :
-            break;
+            default :
+                break;
         }
     }
 }
 
 void Game::update(sf::Time)
 {
+    yazid.deplacement();
+    yazid.scrolling();
 }
 
+
+// le rendu final
 void Game::render()
 {
     mWindow.clear();
